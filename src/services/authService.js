@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'https://to-do-list-b.onrender.com/api/auth';
+// Use environment variable (works in both development and production)
+const API_URL = `${process.env.REACT_APP_API_URL}/api/auth`;
 
 export const loginUser = async ({ email, password }) => {
   const response = await axios.post(`${API_URL}/login`, { email, password });

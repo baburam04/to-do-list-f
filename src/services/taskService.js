@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://to-do-list-b.onrender.com/api/tasks';
+const API_URL = `${process.env.REACT_APP_API_URL}/api/tasks`;
 
 const getAuthHeader = async () => {
   const token = await AsyncStorage.getItem('token');
