@@ -1,13 +1,13 @@
 module.exports = function(api) {
     api.cache(true);
-    
     return {
       presets: [
         'babel-preset-expo',
-        ['@babel/preset-env', { targets: { node: 'current' } }],
-        '@babel/preset-typescript',
+        '@babel/preset-env',
+        '@babel/preset-typescript'
       ],
       plugins: [
+        ['@babel/plugin-proposal-decorators', { legacy: true }],
         [
           'module:react-native-dotenv',
           {
@@ -16,9 +16,7 @@ module.exports = function(api) {
             safe: false,
             allowUndefined: true,
           },
-        ],
-        'react-native-reanimated/plugin', // Required for Reanimated 2
-        ['@babel/plugin-proposal-decorators', { legacy: true }],
-      ],
+        ]
+      ]
     };
   };
